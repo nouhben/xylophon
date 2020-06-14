@@ -36,17 +36,50 @@ class XylophoneApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.black,
         body: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              _buildKey(color: Colors.redAccent[400], noteName: 'note1'),
-              _buildKey(color: Colors.blueAccent[400], noteName: 'note2'),
-              _buildKey(color: Colors.yellowAccent[400], noteName: 'note3'),
-              _buildKey(color: Colors.purpleAccent[400], noteName: 'note4'),
-              _buildKey(color: Colors.indigoAccent[400], noteName: 'note5'),
-              _buildKey(color: Colors.lightGreenAccent[400], noteName: 'note6'),
-              _buildKey2(color: Colors.orangeAccent[400], noteName: 'note7'),
-            ],
+          child: OrientationBuilder(
+            builder: (context, orientation) {
+              return orientation == Orientation.portrait
+                  ? Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        _buildKey(
+                            color: Colors.redAccent[400], noteName: 'note1'),
+                        _buildKey(
+                            color: Colors.blueAccent[400], noteName: 'note2'),
+                        _buildKey(
+                            color: Colors.yellowAccent[400], noteName: 'note3'),
+                        _buildKey(
+                            color: Colors.purpleAccent[400], noteName: 'note4'),
+                        _buildKey(
+                            color: Colors.indigoAccent[400], noteName: 'note5'),
+                        _buildKey(
+                            color: Colors.lightGreenAccent[400],
+                            noteName: 'note6'),
+                        _buildKey2(
+                            color: Colors.orangeAccent[400], noteName: 'note7'),
+                      ],
+                    )
+                  : Row(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        _buildKey(
+                            color: Colors.redAccent[400], noteName: 'note1'),
+                        _buildKey(
+                            color: Colors.blueAccent[400], noteName: 'note2'),
+                        _buildKey(
+                            color: Colors.yellowAccent[400], noteName: 'note3'),
+                        _buildKey(
+                            color: Colors.purpleAccent[400], noteName: 'note4'),
+                        _buildKey(
+                            color: Colors.indigoAccent[400], noteName: 'note5'),
+                        _buildKey(
+                            color: Colors.lightGreenAccent[400],
+                            noteName: 'note6'),
+                        _buildKey2(
+                            color: Colors.orangeAccent[400], noteName: 'note7'),
+                      ],
+                    );
+            },
           ),
         ),
       ),
